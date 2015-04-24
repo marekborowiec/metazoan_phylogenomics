@@ -39,14 +39,9 @@ example: 200""")
 replicatesNo = raw_input(prompt)
 
 print("""What is the path to your phyutility.jar file?
-example: /home/user/Phylo-Software/Phyutility""")
-phyutDir = "java -jar " + raw_input(prompt) + "/phyutility.jar -concat -in "
+example: /home/user/Phylo-Software/Phyutility/phyutility.jar""")
+phyutDir = "java -jar " + raw_input(prompt) + " -concat -in "
 #print phyutDir
-
-print("""Do you want to keep folders with sampled alignments?
-This will result in retaining large number of copied files (no. loci x no, no. replicates)
-(y/n)""")
-keepFolders = raw_input(prompt)
 
 print("""Are your sequences amino acid or DNA?
 (aa/dna)""")
@@ -78,8 +73,3 @@ for directory in directories:
         call_string = phyutDir + directory + '/* ' + '-out ' + directory + '.nex'
         print call_string
         subprocess.call(call_string, shell=True)
-
-
-if keepFolders == "y":
-	for directory in directories:
-		shutil.rmtree(directory)
