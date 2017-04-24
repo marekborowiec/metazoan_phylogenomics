@@ -187,9 +187,7 @@ al_dir <- file.path(up_work_dir, "Single_gene_alignments/")
 tr_dir <- file.path(up_work_dir, "RAxML_single_genes/")
 
 # define function to perform regression, 
-# calculate R-squared, and save saturation plots
-# needs fasta alignments and 
-# corresponding raxml's tree files in the same folder 
+# calculate R-squared, and save saturation plots 
 Saturation <- function(seq, tree) {
   
   # read in alignment
